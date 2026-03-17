@@ -1,53 +1,16 @@
 {
-  "name": "auto-claude",
-  "version": "2.7.6-beta.2",
-  "description": "Autonomous multi-agent coding framework powered by Claude AI",
-  "license": "AGPL-3.0",
-  "author": "Auto Claude Team",
-  "workspaces": [
-    "apps/*",
-    "libs/*"
-  ],
+  "name": "hp-base",
+  "version": "3.4.0",
+  "description": "Hosting Platform base image - Express server with Postgres, live route deployment, stored functions",
+  "main": "server.js",
   "scripts": {
-    "install:backend": "node scripts/install-backend.js",
-    "install:frontend": "cd apps/frontend && npm install",
-    "install:all": "npm run install:backend && npm run install:frontend",
-    "start": "cd apps/frontend && npm run build && npm run start",
-    "dev": "cd apps/frontend && npm run dev",
-    "dev:debug": "cd apps/frontend && npm run dev:debug",
-    "dev:mcp": "cd apps/frontend && npm run dev:mcp",
-    "build": "cd apps/frontend && npm run build",
-    "lint": "cd apps/frontend && npm run lint",
-    "test": "cd apps/frontend && npm test",
-    "test:backend": "node scripts/test-backend.js",
-    "package": "cd apps/frontend && npm run package",
-    "package:mac": "cd apps/frontend && npm run package:mac",
-    "package:win": "cd apps/frontend && npm run package:win",
-    "package:linux": "cd apps/frontend && npm run package:linux"
-  },
-  "engines": {
-    "node": ">=24.0.0",
-    "npm": ">=10.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/AndyMik90/Auto-Claude.git"
-  },
-  "keywords": [
-    "ai",
-    "claude",
-    "autonomous",
-    "coding",
-    "agents",
-    "electron"
-  ],
-  "devDependencies": {
-    "jsdom": "^27.4.0"
+    "start": "node server.js"
   },
   "dependencies": {
-    "lucide-react": "^0.562.0"
-  },
-  "overrides": {
-    "@electron/rebuild": "4.0.2"
+    "express": "^4.21.0",
+    "pg": "^8.13.0",
+    "cors": "^2.8.5",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3"
   }
 }
